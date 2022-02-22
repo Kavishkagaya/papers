@@ -6,7 +6,7 @@ class Paperserializer(serializers.ModelSerializer):
 
     class Meta:
         model = Papers
-        fields = ['id', 'title', 'imgurl', 'fileurl',
+        fields = ['id', 'title', 'thumbnail', 'file', 'get_file',
                   'subject', 'get_absolute_url']
 
 
@@ -15,10 +15,12 @@ class Subjectserializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subjects
-        fields = ['id', 'title', 'imgurl', 'get_absolute_url', 'papers']
+        fields = ['id', 'title', 'get_image',
+                  'get_thumbnail', 'get_absolute_url', 'papers']
 
 
 class Subjectsserializer(serializers.ModelSerializer):
     class Meta:
         model = Subjects
-        fields = ['id', 'title', 'imgurl', 'get_absolute_url']
+        fields = ['id', 'title', 'image', 'get_image',
+                  'get_thumbnail', 'get_absolute_url']

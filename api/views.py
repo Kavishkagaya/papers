@@ -16,9 +16,9 @@ class SubjectViewSet(viewsets.ModelViewSet):
     authentication_classes = {TokenAuthentication, SessionAuthentication}
 
     def get_object(self, queryset=None, **kwargs):
-        item = self.kwargs.get('pk')
+        item = self.kwargs.get('pk').lower()
         print(item)
-        return get_object_or_404(Subjects, title=item)
+        return get_object_or_404(Subjects, slug=item)
 
 
 class SubjectsViewSet(viewsets.ModelViewSet):
@@ -33,7 +33,3 @@ class PaperViewSet(viewsets.ModelViewSet):
     serializer_class = Paperserializer
     permission_classes = [AllStaffAllcanEditANDuserReadOnly]
     authentication_classes = {TokenAuthentication, SessionAuthentication}
-
-    def get_object(self, queryset=None, **kwargs):
-        item = self.kwargs.get('pk')
-        return get_object_or_404(Papers, slug=item)
