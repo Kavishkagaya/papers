@@ -102,11 +102,7 @@ WSGI_APPLICATION = 'papers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',                     
-        'USER': 'myuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'NAME':  os.path.join(BASE_DIR, 'mydb')',        
     }
 }
 
