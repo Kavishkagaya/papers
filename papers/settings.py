@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'papers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':  os.path.join(BASE_DIR, 'mydb')',        
+        'NAME':  os.path.join(BASE_DIR, 'mydb'),        
     }
 }
 
