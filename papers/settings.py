@@ -98,14 +98,16 @@ WSGI_APPLICATION = 'papers.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':  os.path.join(BASE_DIR, 'mydb'),        
+        'NAME': 'd6lk2mip20iptf',                     
+        'USER': 'owowbcghejwmwe',
+        'PASSWORD': '58c04b4dd9771cc2ffbacc6f78364145788b43e73a96cc1ba385ca52e3301952',
+        'HOST': 'ec2-3-225-79-57.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'PORT': '5432',                      # Set to empty string for default.
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
