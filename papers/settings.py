@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'djoser',
     'django_cleanup.apps.CleanupConfig',
     'api',
+    'cloudinary',
 ]
 
 
@@ -143,6 +145,12 @@ USE_TZ = True
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'YOUR_CLOUD_NAME',
+    'API_KEY': 'YOUR_API_KEY',
+    'API_SECRET': 'YOUR_API_SECRET',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 django_heroku.settings(locals())
 
